@@ -50,22 +50,3 @@ export default function Home({ customers }) {
 }
 
 
-export async function getServerSideProps(context) {
-
-  await CONNECTDB()
-
-  const result = await CUSTOMER.find({})
-  const customers = result.map((doc) => {
-    const post = doc.toObject()
-    post._id = post._id.toString()
-    post.createdAt = post.createdAt.toString()
-    return post
-  })
-
-  return {
-    props: { customers }, // will be passed to the page component as props
-  }
-
-}
-
-
