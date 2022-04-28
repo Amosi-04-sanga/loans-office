@@ -1,10 +1,8 @@
 import Head from 'next/head'
 import HomeNav from '../components/HomeNav'
-import CONNECTDB from '../middleware/connectDB'
-import CUSTOMER from '../models/customers'
 
 
-export default function Home({ customers }) {
+export default function Home() {
 
 
   return (

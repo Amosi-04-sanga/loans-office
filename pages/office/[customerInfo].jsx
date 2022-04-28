@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
+import OfficeNav from '../../components/OfficeNav'
 
 
 const customerInfo = () => {
@@ -32,6 +33,7 @@ const customerInfo = () => {
 
   return (
     <div>
+      < OfficeNav />
       <div className="w-40 h-40">
         <p>hello amos</p>
 

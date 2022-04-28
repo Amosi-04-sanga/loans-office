@@ -49,7 +49,8 @@ const register = () => {
         sponsorPhoto: "",
       })
 
-      router.reload(window.location.pathname)
+      // router.reload(window.location.pathname)
+      router.push("/office/customers")
 
     } else {
       // alert a message
@@ -62,7 +63,7 @@ const register = () => {
       < OfficeNav />
       <div className={`${styles.registerFormWrapper} my-8`}>
         <h2 className='mb-4 capitalize'>register a customer</h2>
-        <form className={styles.registerForm} onSubmit={submitHandle}>
+        <form className={styles.registerForm} autoComplete="false" onSubmit={submitHandle}>
           <div className="my-4">
             <label className='block w-full mb-2' htmlFor="debtorName">Enter debtor name</label>
             <input
