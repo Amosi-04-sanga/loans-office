@@ -18,12 +18,23 @@
     width: 60vw;
 }
 .loginForm {
-    width: 40vw;
+    width: 60vw;
 }
 
 @media screen and (max-width: 470px) {
     .registerForm {
         width: 90vw;
+    }
+}
+
+@media screen and (max-width: 570px) {
+    .loginForm {
+        width: 90vw;
+    }
+}
+@media screen and (min-width: 775px) {
+    .loginForm {
+        width: 40vw;
     }
 }
 
