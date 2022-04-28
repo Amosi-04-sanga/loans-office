@@ -52,6 +52,7 @@ const register = () => {
       router.reload(window.location.pathname)
 
     } else {
+      // alert a message
        alert("please, fill all fields")
     }
 
