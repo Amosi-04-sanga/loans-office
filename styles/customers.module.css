@@ -1,0 +1,23 @@
+.button {
+    background-color: gold;
+}
+
+.customerLink {
+    height: 7vh;
+    background-color: antiquewhite;
+}
+
+.customerList {
+    width: 70vw;
+}
+
+@media screen and (max-width: 500px) {
+    .customerList {
+        width: 90vw;
+    }
+}
+
+.icon path {
+    fill: rgb(182, 207, 182);
+}
+
