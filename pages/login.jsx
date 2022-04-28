@@ -18,8 +18,9 @@ const login = () => {
   return (
     <>
         < HomeNav />
-        <div className={styles.formwrapper}>
+        <div className={styles.loginformWrapper}>
         <form className={styles.loginForm} onSubmit={submitHandle}>
+          <h2 className='my-4' >LOGIN</h2>
             <div className="my-4">
                 <label className='block w-full mb-2' htmlFor="email">Enter your email</label>
                 <input 

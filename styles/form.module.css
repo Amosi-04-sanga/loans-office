@@ -1,15 +1,30 @@
-.formwrapper {
+.registerFormWrapper,
+.loginformWrapper {
     display: grid;
     place-content: center;
-    height: 90vh;
     border-radius: .5rem;
 }
+.loginformWrapper {
+    height: 90vh;
+}
 
+.registerForm,
 .loginForm {
-    width: 40vw;
     padding: 2rem 1rem;
     border-radius: inherit;
     background-color: rgba(228, 152, 128, .3);
+}
+.registerForm {
+    width: 60vw;
+}
+.loginForm {
+    width: 40vw;
+}
+
+@media screen and (max-width: 470px) {
+    .registerForm {
+        width: 90vw;
+    }
 }
 
 .button {
