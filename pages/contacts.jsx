@@ -1,6 +1,6 @@
 import HomeNav from '../components/HomeNav'
 
-const contacts = () => {
+const Contacts = () => {
     return (
         <>
             < HomeNav />
@@ -9,4 +9,4 @@ const contacts = () => {
     )
 }
 
-export default contacts
+export default Contacts

@@ -1,7 +1,7 @@
 import React from 'react'
 import OfficeNav from '../../components/OfficeNav'
 
-const records = () => {
+const Records = () => {
   return (
     <>
        < OfficeNav />
@@ -10,4 +10,4 @@ const records = () => {
   )
 }
 
-export default records
+export default Records

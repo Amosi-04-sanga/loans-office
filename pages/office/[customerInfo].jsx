@@ -4,12 +4,12 @@ import { useEffect, useState } from 'react'
 import OfficeNav from '../../components/OfficeNav'
 
 
-const customerInfo = () => {
+const CustomerInfo = () => {
 
   const [customer, setCustomer] = useState(null)
 
-  const router = useRouter()
-  const { customerInfo } = router.query
+  const Router = useRouter()
+  const { customerInfo } = Router.query
   console.log(customerInfo);
 
   useEffect(() => {
@@ -58,7 +58,7 @@ const customerInfo = () => {
   )
 }
 
-export default customerInfo
+export default CustomerInfo
 
 // 
 

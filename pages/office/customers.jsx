@@ -4,7 +4,7 @@ import CONNECTDB from "../../middleware/connectDB"
 import CUSTOMER from '../../models/customers'
 import styles from '../../styles/customers.module.css'
 
-const customers = ({ customers }) => {
+const Customers = ({ customers }) => {
   console.log(customers);
   return (
     <>
@@ -41,7 +41,7 @@ const customers = ({ customers }) => {
   )
 }
 
-export default customers
+export default Customers
 
 
 export async function getServerSideProps(context) {

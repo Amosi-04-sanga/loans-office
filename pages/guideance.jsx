@@ -1,6 +1,6 @@
 import HomeNav from '../components/HomeNav'
 
-const guideance = () => {
+const Guideance = () => {
     return (
         <>
             < HomeNav />
@@ -9,4 +9,4 @@ const guideance = () => {
     )
 }
 
-export default guideance
+export default Guideance

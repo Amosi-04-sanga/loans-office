@@ -3,7 +3,7 @@ import HomeNav from '../components/HomeNav'
 import styles from '../styles/form.module.css'
 import Link from 'next/link'
 
-const login = () => {
+const Login = () => {
 
  const [formData, setFormData] = useState({
      email: "",
@@ -52,4 +52,4 @@ const login = () => {
   )
 }
 
-export default login
+export default Login
