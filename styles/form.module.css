@@ -1,0 +1,21 @@
+.formwrapper {
+    display: grid;
+    place-content: center;
+    height: 90vh;
+    border-radius: .5rem;
+}
+
+.loginForm {
+    width: 40vw;
+    padding: 2rem 1rem;
+    border-radius: inherit;
+    background-color: rgba(228, 152, 128, .3);
+}
+
+.button {
+    background-color: rgb(228, 152, 128);
+}
+
+.button:hover {
+   background-color: #E49880;
+}

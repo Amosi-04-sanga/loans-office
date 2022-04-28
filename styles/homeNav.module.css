@@ -1,0 +1,21 @@
+.nav {
+    height: 10vh;
+    box-shadow: 0 0 4px 0 rgb(181, 167, 167);
+    background-color: aliceblue;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2vw;
+    z-index: 11;
+}
+
+.logo {
+    width: 20vw;
+}
+
+.links {
+    width: 70vw;
+}
+
+.links span {
+    cursor: pointer;
+}
