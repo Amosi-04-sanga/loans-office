@@ -15,9 +15,6 @@ const OfficeNav = () => {
            <Link href="/office/register" >
               <span>Register</span>
            </Link>
-           <Link href="/office/records" >
-              <span>Records</span>
-           </Link>
            <Link href="/" >
               <span>logout</span>
            </Link>

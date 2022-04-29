@@ -17,7 +17,7 @@ const Customers = ({ customers }) => {
       {
         customers ? (
           <div className="my-4">
-            <ol className={`${styles.customerList} list-disk mx-auto`} >
+            <ol className={`${styles.customerList} mx-auto`} >
               {
                 customers.map((customer, index) => (
                   <li key={index} className= {`grid grid-cols-12 py-2`} >

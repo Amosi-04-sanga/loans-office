@@ -177,7 +177,7 @@ const CustomerInfo = () => {
               {
                 customer && (
                   customer.refund.map((obj, index) => (
-                    <li key={index} className={`${refundItem} mb-2`} > {format3dig(obj.amount)}/= on {moment(obj.date).format("DD MMM, YYYY")} </li>
+                    <li key={index} className={`${styles.refundItem} mb-2`} > {format3dig(obj.amount)}/= on {moment(obj.date).format("DD MMM, YYYY")} </li>
                   ))
                 )
               }
