@@ -55,3 +55,8 @@
     background-color: white;
 }
 
+.info,
+.refundItem {
+    white-space: nowrap;
+}
+
