@@ -120,7 +120,7 @@ const CustomerInfo = () => {
             {
               customer ? (
                 <div >
-                  <div className="grid grid-cols-1 md:grid-cols-12 gap-4 place-items-center">
+                  <div className="grid grid-cols-1 md:grid-cols-12 gap-4 place-items-start md:place-items-center">
                     <div className="col-span-5">
                       <p className='pb-2' > Debtor: {customer.debtorName} </p>
                       <div className={`${styles.photo}`}>
@@ -151,7 +151,7 @@ const CustomerInfo = () => {
                     </div>
                   </div>
 
-                  <div className="mt-20 grid grid-cols-1 md:grid-cols-12 gap-4 place-items-center">
+                  <div className="mt-20 grid grid-cols-1 md:grid-cols-12 gap-4 place-items-start md:place-items-center">
                     <div className="col-span-5">
                       <p className='pb-2' > Debtor: {customer.sponsorName} </p>
                       <div className={`${styles.photo}`}>
@@ -172,8 +172,8 @@ const CustomerInfo = () => {
             }
           </div>
 
-          <div className="p-2 py-6 lg:p-8 mt-8">
-            <ol className='list-decimal md:text-left grid place-items-center' >
+          <div className="p-8 py-6 lg:p-8 mt-8">
+            <ol className='list-decimal md:text-left grid place-items-start md:place-items-center' >
               {
                 customer && (
                   customer.refund.map((obj, index) => (
