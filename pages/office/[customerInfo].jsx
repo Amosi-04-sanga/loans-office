@@ -5,16 +5,15 @@ import OfficeNav from '../../components/OfficeNav'
 import { BoxLoading } from 'react-loadingg'
 import styles from '../../styles/customerInfo.module.css'
 import moment from 'moment'
-//import swal from 'swal'
 
 
 const CustomerInfo = () => {
-  const router = useRouter()
   const [customer, setCustomer] = useState(null)
   const [isActive, setIsActive] = useState(false)
   const [amount, setAmount] = useState("")
-  const Router = useRouter()
-  const { customerInfo } = Router.query
+  const [isFinished, setIsFinished] = useState(false)
+  const router = useRouter()
+  const { customerInfo } = router.query
   console.log(customerInfo);
 
   useEffect(() => {
@@ -30,7 +29,11 @@ const CustomerInfo = () => {
 
     getCustomer()
 
+
+
   }, [customerInfo])
+
+
 
   const popOutForm = () => {
     setIsActive(true)
@@ -131,7 +134,7 @@ const CustomerInfo = () => {
                     <div className="col-span-7">
                       <p className={styles.info} > <span>Debtor Name:  </span> {customer.debtorName} </p>
                       <p className={styles.info} > <span>Debtor contact:  </span> {customer.debtorTell} </p>
-                      <p className={styles.info} > <span>Loan:  </span> { format3dig(customer.loan) } </p>
+                      <p className={styles.info} > <span>Loan:  </span> {format3dig(customer.loan)} </p>
                       <p className={styles.info} > <span>Date:  </span> {moment(customer.createdAt).format("DD MMM, YYYY")} </p>
                       <p className={styles.info} >
                         <span>Amount left: </span>
@@ -139,8 +142,8 @@ const CustomerInfo = () => {
                         {
                           debtCalc() <= "0" ?
                             (
-                              Router.push("/office/customers"),
-                              axios.delete( `/api/customers/${customerInfo}` )
+                              axios.delete(`/api/customers/${customerInfo}`),
+                              router.push("/office/customers")
                             ) :
                             format3dig(debtCalc())
                         }
@@ -166,7 +169,7 @@ const CustomerInfo = () => {
                   </div>
                 </div>
               ) :
-                (<h1 >
+                (<h1 style={{ position: "fixed", left: "50%", top: "50%", transform: "translate(-50%,-50%)" }} >
                   <BoxLoading />
                 </h1>)
             }
@@ -193,5 +196,4 @@ const CustomerInfo = () => {
 
 export default CustomerInfo
 
-// 
 

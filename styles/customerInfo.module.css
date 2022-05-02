@@ -1,4 +1,3 @@
-
 .topFlex {
    padding: 0 5vw;
 }
@@ -20,16 +19,11 @@
     border-radius: .2rem;
 }
 
-@media screen and (max-width: 570px ) {
-    .photo {
-        width: 40vw;
-        height: 40vw;
-    }
 
-}
 
 .mainSection {
     background-color: rgba(253, 51, 193, .2);
+    min-height: 90vh;
   }
 
 .bgcolor {
@@ -39,6 +33,7 @@
 .info {
     position: relative;
     margin: .3rem .1rem 0;
+    white-space: nowrap;
 }
 
 .info::before {
@@ -63,6 +58,20 @@
 .info span {
     font-weight: 900;
 }
+
+@media screen and (max-width: 570px ) {
+    .photo {
+        width: 60vw;
+        height: 60vw;
+    }
+    .mainSection {
+        font-size: .9rem;
+    }
+    .info::after {
+        top: 14px;
+    }
+}
+
 
 .formOpen {
     display: block;
@@ -103,4 +112,6 @@
     filter: brightness(.2);
 }
 
-
+.refundItem {
+    white-space: nowrap;
+}

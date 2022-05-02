@@ -4,16 +4,22 @@
 
 .customerList {
     width: 70vw;
-    counter-reset: my-counter;
+    counter-reset: counter;
+    position: relative;
 }
 
 .customerLink {
     height: 7vh;
-    counter-increment: my--counter;
-    content: counter (my-sec-counter) "." ;
     background-color: antiquewhite;
 }
 
+.customerLink::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    counter-increment: counter;
+    content: counter (counter) "." ;
+}
 
 @media screen and (max-width: 500px) {
     .customerList {
@@ -21,6 +27,7 @@
     }
 }
 
-.icon path {
-    fill: rgb(182, 207, 182);
+
+.refundNo {
+    color: rgba(53, 71, 25, 0.752);
 }

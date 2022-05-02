@@ -1,49 +1,95 @@
+import axios from "axios"
 import Link from "next/link"
 import OfficeNav from "../../components/OfficeNav"
-import CONNECTDB from "../../middleware/connectDB"
-import CUSTOMER from '../../models/customers'
 import styles from '../../styles/customers.module.css'
+import { useEffect, useState } from 'react'
+import { BoxLoading } from 'react-loadingg'
 
-const Customers = ({ customers }) => {
-  console.log(customers);
+const Customers = () => {
+  const [customers, setCustomers] = useState(null)
+  useEffect(() => {
+    const getClients = async () => {
+      try {
+        await axios.get("/api/customers")
+          .then(doc => {
+            const { data } = doc
+            console.log(data)
+            setCustomers(data)
+          })
+      } catch (error) {
+        console.log(error)
+      }
+    }
+    getClients()
+
+  }, [])
+
+
+
   return (
     <>
       < OfficeNav />
       <div className="p-4 md:p-8">
-      <div className="flex justify-between mt-10 mb-8">
-        <p>Customer details</p>
-        <p> {customers.length} customers </p>
+        <div className="flex justify-between mt-10 mb-8">
+          <p>Customer details</p>
+          {
+            !customers ?
+              "" :
+              customers.length === 1 ?
+                (
+                  <p> {customers.length} customer</p>
+                ) :
+                (
+                  <p> {customers.length} customers</p>
+                )
+          }
+        </div>
+
+        {
+          !customers ?
+            (
+              <span style={{ position: "fixed", left: "50%", top: "50%", transform: "translate(-50%,-50%)" }} > < BoxLoading /> </span>
+            ) :
+            customers.length === 0 ?
+              (
+                <span style={{ position: "fixed", left: "50%", top: "50%", transform: "translate(-50%,-50%)" }} > NO CUSTOMERS </span>
+              ) :
+              (
+                <div className="my-4">
+                  <ol className={`${styles.customerList} mx-auto`} >
+                    {
+                      customers.map((customer, index) => (
+                        <li key={index} className={`grid grid-cols-12 py-2`} >
+                          <div className={`${styles.customerLink} cursor-pointer col-span-10 sm:col-span-11 p-2`}>
+                            <Link href={`/office/${customer._id}`} >
+                              <p>{customer.debtorName}</p>
+                            </Link>
+                          </div>
+                          <div className="flex justify-end items-center col-span-2 sm:col-span-1">
+                            
+                               {
+                                  <span className={styles.refundNo} > {customer.refund.length} </span>
+                               }
+
+                          </div>
+                        </li>
+                      ))
+                    }
+                  </ol>
+                </div>
+              )
+        }
+
       </div>
-      {
-        customers ? (
-          <div className="my-4">
-            <ol className={`${styles.customerList} mx-auto`} >
-              {
-                customers.map((customer, index) => (
-                  <li key={index} className= {`grid grid-cols-12 py-2`} >
-                    <div className={`${styles.customerLink} cursor-pointer col-span-10 sm:col-span-11 p-2`}>
-                      <Link href={`/office/${customer._id}`} >
-                        <p>{customer.debtorName}</p>
-                      </Link>
-                    </div>
-                    <div className="flex justify-end items-center col-span-2 sm:col-span-1">
-                      <svg className={`${styles.icon} w-4 h-6`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M438.6 105.4C451.1 117.9 451.1 138.1 438.6 150.6L182.6 406.6C170.1 419.1 149.9 419.1 137.4 406.6L9.372 278.6C-3.124 266.1-3.124 245.9 9.372 233.4C21.87 220.9 42.13 220.9 54.63 233.4L159.1 338.7L393.4 105.4C405.9 92.88 426.1 92.88 438.6 105.4H438.6z" /></svg>
-                    </div>
-                  </li>
-                ))
-              }
-            </ol>
-          </div>
-        ) : "loading..."
-      }
-      </div>
+
+
     </>
   )
 }
 
 export default Customers
 
-
+/*
 export async function getServerSideProps(context) {
 
   await CONNECTDB()
@@ -62,5 +108,5 @@ export async function getServerSideProps(context) {
 
 }
 
-
+*/
 
