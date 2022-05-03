@@ -14,14 +14,14 @@ export default function Home() {
 
       < HomeNav />
 
-      <header className='my-16 text-center px-8' >
+      <header className='my-8 text-center px-8' >
         <h1 className='heading relative bottomline my-4'>MOSDEV LOANS SERVICES</h1>
         <section className='header-section indent-8 first-letter:text-2xl' >
           Aliquam tellus fermentum sit sociis gravida velit. Pharetra bibendum pharetra, a commodo egestas. Aliquam id elit sem tincidunt a venenatis urna, faucibus. Ultrices est felis amet tortor at.
         </section>
       </header>
 
-      <main className='mt-20 px-8  md:px-20' >
+      <main className='mt-10 px-8  md:px-20' >
         <div className="text-center">
           <div className="my-4">
             <svg className='w-20 -rotate-45 h-20 m-auto' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M256 0v128h128L256 0zM224 128L224 0H48C21.49 0 0 21.49 0 48v416C0 490.5 21.49 512 48 512h288c26.51 0 48-21.49 48-48V160h-127.1C238.3 160 224 145.7 224 128zM272 416h-160C103.2 416 96 408.8 96 400C96 391.2 103.2 384 112 384h160c8.836 0 16 7.162 16 16C288 408.8 280.8 416 272 416zM272 352h-160C103.2 352 96 344.8 96 336C96 327.2 103.2 320 112 320h160c8.836 0 16 7.162 16 16C288 344.8 280.8 352 272 352zM288 272C288 280.8 280.8 288 272 288h-160C103.2 288 96 280.8 96 272C96 263.2 103.2 256 112 256h160C280.8 256 288 263.2 288 272z" /></svg>

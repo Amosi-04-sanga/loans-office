@@ -1,21 +1,43 @@
 import { useState } from 'react'
 import HomeNav from '../components/HomeNav'
 import styles from '../styles/form.module.css'
-import Link from 'next/link'
+import axios from 'axios'
+import jwt from 'jsonwebtoken'
+import { useRouter } from 'next/router'
 
 const Login = () => {
-
+  const router = useRouter()
   const [formData, setFormData] = useState({
     email: "",
     password: ""
   })
 
-  const submitHandle = e => {
+  const submitHandle = async (e: { preventDefault: () => void }) => {
     e.preventDefault()
-    console.log("form submited");
-  }
 
-  return (
+    await axios.post("/api/login", formData)
+      .then(res => {
+        const { data } = res
+
+
+        if (data.token) {
+          const obj = jwt.decode(data.token) as { [key: string]: boolean }
+          if(obj.user) {
+            router.push("/office/customers")
+          }
+          
+        }
+        else {
+          console.log("something went wrong!")
+        }
+
+      })
+
+      
+    }
+
+    
+    return (
     <>
       < HomeNav />
       <div className={styles.loginformWrapper}>
@@ -49,9 +71,9 @@ const Login = () => {
               />
             </div>
           </div>
-          < Link href="/office/customers" >
-            <button className={`${styles.button} block border-none outline-none mx-auto btn p-2 px-4`} type="submit">LOGIN</button>
-          </Link>
+
+          <button className={`${styles.button} block border-none outline-none mx-auto btn p-2 px-4`} type="submit">LOGIN</button>
+
         </form>
       </div>
     </>
