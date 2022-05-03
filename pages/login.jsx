@@ -49,7 +49,7 @@ const Login = () => {
               />
             </div>
           </div>
-          < Link href="/office" >
+          < Link href="/office/customers" >
             <button className={`${styles.button} block border-none outline-none mx-auto btn p-2 px-4`} type="submit">LOGIN</button>
           </Link>
         </form>

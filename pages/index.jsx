@@ -28,19 +28,9 @@ export default function Home() {
           </div>
           <h2 className='bottomline relative my-2'>TERMS AND CONDITIONS</h2>
           <p className='my-4 indent-8 first-letter:text-2xl' >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blandit neque et nec tristique quis eu. Elementum congue proin sit eget quis non. Id aliquam inte</p>
-          <ol className='my-4 list-decimal inline-block text-left' >
-            <li>Elementum congue proin sit eget quis non. Id aliquam inte</li>
-            <li>Elementum congue proin sit eget quis non. Id aliquam inte</li>
-            <li>Elementum congue proin sit eget quis non. Id aliquam inte</li>
-            <li>Elementum congue proin sit eget quis non. Id aliquam inte</li>
-            <li>Elementum congue proin sit eget quis non. Id aliquam inte</li>
-            <li>Elementum congue proin sit eget quis non. Id aliquam inte</li>
-            <li>Elementum congue proin sit eget quis non. Id aliquam inte</li>
-            <li>Elementum congue proin sit eget quis non. Id aliquam inte</li>
-            <li>Elementum congue proin sit eget quis non. Id aliquam inte</li>
-            <li>Elementum congue proin sit eget quis non. Id aliquam inte</li>
-          </ol>
+          
         </div>
+       
       </main>
 
     </div>

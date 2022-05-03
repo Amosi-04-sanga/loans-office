@@ -4,7 +4,9 @@ const Contacts = () => {
     return (
         <>
             < HomeNav />
-            <h1>contacts</h1>
+            <h2 className='text-center my-4' >CONTACTS</h2>
+            <p className='text-center my-2' >email: sangaamo@gmail.com</p>
+            <p className='text-center' >Tell: 0764584764</p>
         </>
     )
 }

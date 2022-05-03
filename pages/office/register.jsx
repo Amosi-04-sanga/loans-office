@@ -9,7 +9,7 @@ import axios from 'axios';
 const Register = () => {
 
   const router = useRouter()
-
+  const [isSend, setIsSend] = useState(false)
   const [formData, setFormData] = useState({
     debtorName: "",
     debtorTell: "",
@@ -25,11 +25,12 @@ const Register = () => {
 
   const submitHandle = async e => {
     e.preventDefault()
+    setIsSend(true)
     const { debtorName, debtorTell, loan, homeAdress, bonds, debtorPhoto, sponsorName, sponsorTell, sponsorPhoto } = formData
 
     if (debtorName && debtorTell && loan && homeAdress && bonds && debtorPhoto && sponsorName && sponsorTell && sponsorPhoto) {
-      const url = "/api/customers"  
-        await axios.post( url, formData )
+      const url = "/api/customers"
+      await axios.post(url, formData)
         .then(res => {
           const { data } = res
           console.log(data)
@@ -54,7 +55,7 @@ const Register = () => {
 
     } else {
       // alert a message
-       alert("please, fill all fields")
+      alert("please, fill all fields")
     }
 
   }
@@ -163,7 +164,7 @@ const Register = () => {
               }
             />
           </div>
-          <button className={`${styles.button} block border-none outline-none mx-auto btn p-2 px-4`} type="submit">REGISTER</button>
+          <button className={`${styles.button} block border-none outline-none mx-auto btn p-2 px-4`} type="submit"> {!isSend ? "REGISTER" : "SAVING..."} </button>
         </form>
       </div>
     </>
