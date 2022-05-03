@@ -66,7 +66,7 @@ const Register = () => {
         <h2 className='mb-4 capitalize'>register a customer</h2>
         <form className={styles.registerForm} autoComplete="false" onSubmit={submitHandle}>
           <div className="my-4">
-            <label className='block w-full mb-2' htmlFor="debtorName">Enter debtor name</label>
+            <label className='block w-full mb-2' htmlFor="debtorName">Enter customer name</label>
             <input
               type="text"
               id='debtorName'
@@ -77,7 +77,7 @@ const Register = () => {
             />
           </div>
           <div className="my-8">
-            <label className='block w-full mb-2' htmlFor="debtorTell">Enter debtor phone number</label>
+            <label className='block w-full mb-2' htmlFor="debtorTell">Enter customer phone number</label>
             <input
               type="text"
               id='debtorTell'
@@ -99,7 +99,7 @@ const Register = () => {
             />
           </div>
           <div className="my-8">
-            <label className='block w-full mb-2' htmlFor="homeAdress">Enter home adress of debtor</label>
+            <label className='block w-full mb-2' htmlFor="homeAdress">Enter home adress of customer</label>
             <input
               type="text"
               id='homeAdress'
@@ -144,7 +144,7 @@ const Register = () => {
           </div>
 
           <div className="my-8">
-            <label className='block my -2'>debtor photo</label>
+            <label className='block my -2'>customer photo</label>
             <FileBase64
               type="file"
               multiple={false}

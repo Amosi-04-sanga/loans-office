@@ -108,8 +108,9 @@
     background: radial-gradient(circle, rgba(29, 29, 35, 0.978) 20%, rgb(17, 16, 17) 35%, rgb(19, 44, 49) 100%);
 }
 
-.details img {
-    filter: brightness(.2);
+.details .info,
+.details .photo {
+    opacity: .1;
 }
 
 .refundItem {
