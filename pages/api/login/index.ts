@@ -16,11 +16,10 @@ export default async function (req: NextApiRequest, res: NextApiResponse) {
     res.json({
         token: jwt.sign({
             email,
-            user: email === "sangaamosi04@gmail.com" && password === "sanga123"
+            user: email === process.env.EMAIL && password === process.env.PASSWORD
         }, KEY )
     })
 
-    console.log(email, password);
 
 }
 
