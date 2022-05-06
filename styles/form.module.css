@@ -40,10 +40,11 @@
 
 .button {
     background-color: rgb(228, 152, 128);
+    transition: background-color 200ms ease-in-out;
 }
 
 .button:hover {
-   background-color: #E49880;
+   background-color: #85351db7;
 }
 
 .input {

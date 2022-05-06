@@ -7,6 +7,8 @@ import { useRouter } from 'next/router'
 
 const Login = () => {
   const router = useRouter()
+  const [message, setMessage] = useState("")
+  const [isError, setIsError] = useState(false)
   const [formData, setFormData] = useState({
     email: "",
     password: ""
@@ -22,10 +24,13 @@ const Login = () => {
 
         if (data.token) {
           const obj = jwt.decode(data.token) as { [key: string]: boolean }
-          if(obj.user) {
+          if (obj.user) {
             router.push("/office/customers")
+          } else {
+            setIsError(true)
+            setMessage("Invalid credentials")
           }
-          
+
         }
         else {
           console.log("something went wrong!")
@@ -33,14 +38,15 @@ const Login = () => {
 
       })
 
-      
-    }
 
-    
-    return (
+  }
+
+
+  return (
     <>
       < HomeNav />
       <div className={styles.loginformWrapper}>
+        <p className='pl-4 h-6 text-orange-600'> {!isError ? null : message} </p>
         <form className={styles.loginForm} autoComplete="false" onSubmit={submitHandle}>
           <h2 className='my-4' >LOGIN TO OFFICE</h2>
           <div className="my-4">
@@ -50,6 +56,7 @@ const Login = () => {
               <input
                 type="email"
                 id='email'
+                required
                 className={`${styles.input} text-sm md:text-base px-2 block h-full w-full border-none outline-none`}
                 name='email'
                 value={formData.email}
@@ -64,6 +71,7 @@ const Login = () => {
               <input
                 type="password"
                 id='password'
+                required
                 className={`${styles.input} block input h-full w-full px-2 border-none outline-none`}
                 name='password'
                 value={formData.password}
