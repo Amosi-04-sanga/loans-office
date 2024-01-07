@@ -114,7 +114,7 @@ const CustomerInfo = () => {
 
         <div className={`${styles.topFlex} pt-8 mb-10 flex justify-between items-center`}>
           <p className={`${styles.bottomline} inline-block`} >Customer details</p>
-          <button onClick={popOutForm} className={`${styles.refundBtn} mt-4 cursor-pointer block p-2 border-none outline-none`} >REFUND</button>
+          <button onClick={popOutForm} className={`${styles.refundBtn} mt-4 cursor-pointer block p-2 border-none outline-none`} >RETURN</button>
         </div>
 
         <section className={isActive ? `${styles.details}` : ""}>
@@ -125,7 +125,7 @@ const CustomerInfo = () => {
                 <div >
                   <div className="grid grid-cols-1 md:grid-cols-12 gap-4 place-items-start md:place-items-center">
                     <div className="col-span-5">
-                      <p className='pb-2' > Debtor: {customer.debtorName} </p>
+                      <p className='pb-2 capitalize' > Debtor: {customer.debtorName} </p>
                       <div className={`${styles.photo}`}>
                         <img className='w-full h-full' src={customer.debtorPhoto} alt={customer.debtorName} />
                       </div>
